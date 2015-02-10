@@ -5,22 +5,28 @@ var User = function(name, trips) {
 	this.trips = [];
 }
 
-var pic1 = new User("Josh")
-var pic2 = new User("Mark")
-var pic3 = new User("Ray")
+var picJosh = new User("Josh")
+var picMark = new User("Mark")
+var picRay = new User("Ray")
+var picAustin = new User("Austin")
+var picGuest = new User("Guest")
 
 
-// Trips Constructor 
-var Trips = function(time, hobbOut, hobbIn, distance, user) {
+// Time Record Constructor 
+var Record = function(time, tacOut, tacIn, cost, user, notes) {
 	this.time = time;
-	this.hobbOut = hobbOut;
-	this.hobbIn = hobbIn;
-	this.distance = distance;
+	this.tacOut = tacOut;
+	this.tacIn = tacIn;
+	this.cost = cost;
 	this.user = user;
+	this.notes = notes;
 }
 
-Trips.prototype.create = function(){
-
+Trips.prototype.render = function(){
+	this.$el = $('.history-row').clone()
+	this.$el.append('<tr><td>' + this.date + this.user + this.tacOut + this.tacIn + this.time + this.cost + this.notes '</td></tr>');
+	
+	return this.$el;
 }
 
 
@@ -33,6 +39,9 @@ var Maintenance = function(distance, type) {
 
 
 $(document).on('ready', function() {
+	$('.btn btn-primary').on('click', funtion() {
+		var myRecord = new Record ($('.form-user').val(), $('.form-date').val(), $('.form-tac-out').val(), $('.form-tac-in').val(), $('.form-time').val(), $('.form-notes').val())
 
-	//$('#myModal').modal('click', function)
+		myRecord.render();
+	})
 });

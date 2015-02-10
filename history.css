@@ -1,0 +1,12 @@
+
+.table {
+	max-width: 800px;
+	margin: auto;
+}
+
+.add-container {
+	max-width: 800px;
+	margin: auto;
+	margin-top: 20px;
+	padding-bottom: 10px;
+}

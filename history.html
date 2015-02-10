@@ -2,45 +2,73 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Jeffco Flyers</title>
+    <title>History</title>
     <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="history.css">
   </head>
   <body>
+	<div class="container">
+	  
+	  <!-- navigation -->
+	  <nav class="navbar navbar-default navbar-fixed-to-top navbar-inverse" id="navbar">
+	    <div class="container-nav">
 
+	      <div class="navbar-header">
+	        <a class="navbar-brand" href="#">
+	          <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>
+	        </a>  
+	      </div>
+	      
+	      <form class="form-inline">
+	        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	              <ul class="nav navbar-nav">
+	                
+	                <li><a href="index.html">Home</a></li>
+	                <li class="active"><a href="history.html">View History<span class="sr-only">(current)</span></a></li>
+	              </ul> 
+	      
+	    	</div>
+		   </form>
+		   </div>
+	  </nav>
 
-  <div class="container">
-    
-    <nav class="navbar navbar-default navbar-fixed-to-top navbar-inverse" id="navbar">
-      <div class="container-nav">
+	<!-- Jumbotron -->
+	  <div class="jumbotron">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add A Time Record</button>
+		
 
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">
-            <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>
-          </a>  
-        </div>
-        
-        <form class="form-inline">
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-                  <li><a href="history.html">View History</a></li>
-        
-        
-      </div>
-    </nav>
-
-      <div class="jumbotron">
-        <h1>Jeffco Flyers</h1>
-          <p>N94JB</p>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Enter A Time Record</button>
-          <div class="header-image">
-            <img src="http://airportjournals.com/wp-content/uploads/0607005_4.jpg" class="mooney-img">
+		<!-- History Table -->
+          <div class="history-container">
+          	<table class="table">
+          	    <thead>
+          	        <tr>
+          	            <th>Date</th>
+          	            <th>User</th>
+          	            <th>TAC Out</th>
+          	            <th>TAC In</th>
+          	            <th>Time</th>
+                        <th>Cost</th>
+          	            <th>Notes</th>
+          	        </tr>
+          	    </thead>
+          	    <tbody class="history-row">
+          	        <tr>
+          	            <td></td>
+          	            <td></td>
+          	            <td></td>
+          	            <td></td>
+          	        </tr>
+          	      
+          	    </tbody>
+          	</table>
           </div>
+
       </div>
 
-      <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
+	<!-- Modal with form -->
+      <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm">
             <div class="modal-content">
               
               <div class="modal-header">
@@ -79,12 +107,12 @@
 
                   <div class="form-group">
                     <label for="number">Time</label>
-                    <input type="number" class="form-time" placeholder="Time">
+                    <input type="number" class="form-time" id="time" placeholder="Time">
                   </div>
 
                   <div class="form-group">
                     <label for="text">Notes</label>
-                    <input type="text" class="form-notes" placeholder="Notes">
+                    <input type="text" class="form-notes" id="notes" placeholder="Notes">
                   </div>
                 
                 
@@ -96,14 +124,18 @@
               </div>
             </div>
           </div>
-      </div>
+	
 
-    </div>
-    
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+		
+	</div>
+
+
+  	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.js"></script>
     <script src="main.js"></script>
-
+	
+	</div> 
   </body>
 </html>
