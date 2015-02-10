@@ -1,0 +1,18 @@
+.form-inline {
+	float: right;
+	padding-top: 7px;
+	padding-right: 7px;
+}
+
+#navbar {
+	margin-bottom: 0px;
+}
+
+.mooney-img {
+	max-width: 100%;
+}
+	
+
+.header-image {
+	width: 300px;
+}
