@@ -1,47 +1,91 @@
-// User Contstructor
-
-var User = function(name, trips) {
-	this.name = name
-	this.trips = [];
-}
-
-var picJosh = new User("Josh")
-var picMark = new User("Mark")
-var picRay = new User("Ray")
-var picAustin = new User("Austin")
-var picGuest = new User("Guest")
-
-
 // Time Record Constructor 
-var Record = function(time, tacOut, tacIn, cost, user, notes) {
-	this.time = time;
+
+
+var Record = function(user, date, tacOut, tacIn, hours, cost, notes) {
+	this.hours = tacIn - tacOut;
+	this.date = date;
 	this.tacOut = tacOut;
 	this.tacIn = tacIn;
-	this.cost = cost;
+	this.cost = parseInt(this.hours * 125);
 	this.user = user;
 	this.notes = notes;
 }
 
-Trips.prototype.render = function(){
-	this.$el = $('.history-row').clone()
-	this.$el.append('<tr><td>' + this.date + this.user + this.tacOut + this.tacIn + this.time + this.cost + this.notes '</td></tr>');
+Record.prototype.render = function(){
+	this.$el = $('.history-row')
+	this.$el.append('<tr><td class="postedDate">' + this.date + '</td><td class="postedUser">' + this.user + '</td><td class="postedTacOut">' + this.tacOut + '</td><td class="postedTacIn">' + this.tacIn + '</td><td>' + this.hours + '</td><td>' + this.cost + '</td><td>' + this.notes + '</td></tr>');
+	
+	
+	console.log('this.$el', this.$el);
 	
 	return this.$el;
-}
+
+};
+
+
+// User Constructor
+
+var User = function(name, records) {
+	this.name = name;
+	this.records = [];
+	
+};
+
+User.prototype.addRecords = function(record) {
+	this.records = this.records.push(record);
+};
+
+
 
 
 // Maintenance Constructor
-var Maintenance = function(distance, type) {
-	this.distance = distance;
+var Maintenance = function(items, type) {
 	this.type = type;
+	this.items = [];
+};
+
+hoursAtLastCheck = 0
+var maintChecks = {
+	firstOil : function() {
+		if (hoursAtLastCheck >= 25 && < 30)
+			alert("Oil Change Coming Up")
+	}
+	{
+		else if (hoursAtLastCheck >= 30) {
+			alert("Oil Change Due!!")
+		}
+	},
+
 }
+
+Maintenance.prototype.addMaintenace = function(item) {
+	
+}
+
 
 
 
 $(document).on('ready', function() {
-	$('.btn btn-primary').on('click', funtion() {
-		var myRecord = new Record ($('.form-user').val(), $('.form-date').val(), $('.form-tac-out').val(), $('.form-tac-in').val(), $('.form-time').val(), $('.form-notes').val())
+	var newUser = new User();
+
+	$('#saveTime').on('click', function() {
+		var myRecord = new Record ($('#user').val(), $('.form-date').val(), $('.form-tac-out').val(), $('.form-tac-in').val(), $('.form-notes').val());
+		
+		console.log("clicked!")
+
+		$('.form-tac-out'). val(' ');
+		$('.form-tac-in'). val(' ');
+		$('.form-notes').val(' ');
+		$('.form-date').val(' ');
+		$('#user').val(' ');
+	
+		
+		$('#myModal').modal('hide');
+
+		
+
 
 		myRecord.render();
+		newUser.addRecords(myRecord);
 	})
 });
