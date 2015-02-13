@@ -10,3 +10,34 @@
 	margin-top: 20px;
 	padding-bottom: 10px;
 }
+
+.mainContainer {
+	background-color: 
+}
+
+p {
+	text-align: center;
+	color: #484848;
+	padding-bottom: 10px;
+	font-size: 1.5em;
+}
+
+
+.container-main {
+	background-color: #EFEFEF;
+	height: 500px;
+	border-bottom-right-radius: 1em;
+	border-bottom-left-radius: 1em;
+
+}
+
+.container-button-time {
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+
+.container-button-maintenance {
+	padding-top: 15px;
+	padding-left: 20px;
+}

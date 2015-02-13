@@ -28,11 +28,31 @@ Record.prototype.render = function(){
 var User = function(name, records) {
 	this.name = name;
 	this.records = [];
+	this.hoursflown = 0
 	
 };
 
 User.prototype.addRecords = function(record) {
-	this.records = this.records.push(record);
+	this.records.push(record);
+};
+ 
+var oilchangemin = 25 
+var oilchangedev = 5
+User.prototype.oilCheck = function(){
+	this.hoursflown = _.reduce(this.records, function(memo, num) { 
+		return memo + num.hours}, 0);
+
+	
+		if (this.hoursflown >= oilchangemin && this.hoursflown < oilchangemin + oilchangedev ) {
+			alert("Oil Change Coming Up")
+		}	else if (this.hoursflown - oilchangemin >= oilchangedev) {
+			console.log('hello')
+			alert("Oil Change Due!!")
+		}
+	
+	
+	
+
 };
 
 
@@ -44,23 +64,10 @@ var Maintenance = function(items, type) {
 	this.items = [];
 };
 
-hoursAtLastCheck = 0
-var maintChecks = {
-	firstOil : function() {
-		if (hoursAtLastCheck >= 25 && < 30)
-			alert("Oil Change Coming Up")
-	}
-	{
-		else if (hoursAtLastCheck >= 30) {
-			alert("Oil Change Due!!")
-		}
-	},
 
-}
 
-Maintenance.prototype.addMaintenace = function(item) {
-	
-}
+
+
 
 
 
@@ -71,7 +78,7 @@ $(document).on('ready', function() {
 	$('#saveTime').on('click', function() {
 		var myRecord = new Record ($('#user').val(), $('.form-date').val(), $('.form-tac-out').val(), $('.form-tac-in').val(), $('.form-notes').val());
 		
-		console.log("clicked!")
+		
 
 		$('.form-tac-out'). val(' ');
 		$('.form-tac-in'). val(' ');
@@ -87,5 +94,18 @@ $(document).on('ready', function() {
 
 		myRecord.render();
 		newUser.addRecords(myRecord);
+		newUser.oilCheck();
 	})
+
+	$('#maintenance').on('click', function(){
+		oilchangemin = newUser.hoursflown + 25
+		console.log(oilchangemin)
+	});
 });
+
+
+
+
+
+
+

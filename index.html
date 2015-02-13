@@ -10,7 +10,8 @@
 
 
   <div class="container">
-    
+
+    <!-- navigation -->
     <nav class="navbar navbar-default navbar-fixed-to-top navbar-inverse" id="navbar">
       <div class="container-nav">
 
@@ -29,74 +30,21 @@
         
       </div>
     </nav>
-
-      <div class="jumbotron">
+    
+      <!-- main container -->
+      <div class="header">
         <h1>Jeffco Flyers</h1>
-          <p>N94JB</p>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Enter A Time Record</button>
-          <div class="header-image">
-            <img src="http://airportjournals.com/wp-content/uploads/0607005_4.jpg" class="mooney-img">
+          <p id="tail-number">N94JB</p>
+          <div class="home-button">
+            <a href="history.html" type="button" class="btn btn-primary">Enter A Time Record</a>
           </div>
+            
+        
       </div>
 
-      <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-              
-              <div class="modal-header">
-                <h4>Enter A New Time Record</h4>
-              </div>
-                
-                <div class="modal-body">
-                
-
-                  <div class="form-user">
-                    <label for="sel1">Select list:</label>
-                    <select class="form-control" id="sel1">
-                      <option>Josh</option>
-                      <option>Mark</option>
-                      <option>Ray</option>
-                      <option>Austin</option>
-                      <option>Guest</option>
-                    </select>
-                  </div>
-
-
-                  <div class="form-group">
-                    <label for="date">Date</label>
-                    <input type="date" class="form-date" placeholder="MM/DD/YY">
-                  </div>
-
-                   <div class="form-group">
-                    <label for="number">TAC Out</label>
-                    <input type="number" class="form-tac-out" placeholder="TAC Out">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="number">TAC In</label>
-                    <input type="number" class="form-tac-in" placeholder="TAC In">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="number">Time</label>
-                    <input type="number" class="form-time" placeholder="Time">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="text">Notes</label>
-                    <input type="text" class="form-notes" placeholder="Notes">
-                  </div>
+      
                 
                 
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                  <button type="button" class="btn btn-primary">Save Time</button>
-                </div>
-              
-              </div>
-            </div>
-          </div>
-      </div>
 
     </div>
     
